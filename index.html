@@ -4,71 +4,621 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Tva231-oss — gaming, hardware, mods, emulación y proyectos.">
+<!-- Favicon con tu avatar de Jufu -->
+<link rel="icon" type="image/gif" href="Jufu1.gif">
 <title>Tva231-oss | Mi rincón</title>
 <style>
-:root{--bg:#070b14;--card:rgba(16,24,40,.78);--text:#eef4ff;--muted:#9aa9c2;--a:#6ea8fe;--a2:#9b7cff;--border:rgba(255,255,255,.1)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 12% 8%,rgba(110,168,254,.18),transparent 30%),radial-gradient(circle at 88% 15%,rgba(155,124,255,.17),transparent 28%),var(--bg);overflow-x:hidden}a{color:inherit;text-decoration:none}
-nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:16px 7%;background:rgba(7,11,20,.75);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}.logo{font-weight:800}.logo span{color:var(--a)}.links{display:flex;gap:22px;color:var(--muted);font-size:.95rem}.links a:hover{color:var(--text)}
-main{max-width:1120px;margin:auto;padding:70px 7% 40px}.hero{min-height:70vh;display:grid;place-items:center;text-align:center}.badge{display:inline-block;padding:8px 14px;border:1px solid var(--border);border-radius:999px;color:var(--muted);background:rgba(255,255,255,.04);font-size:.9rem}h1{font-size:clamp(3.2rem,9vw,6.5rem);line-height:.94;margin:22px 0;letter-spacing:-5px}.gradient{background:linear-gradient(100deg,var(--a),var(--a2));-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{max-width:680px;margin:auto;color:var(--muted);font-size:1.12rem;line-height:1.7}.buttons{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.btn{padding:12px 18px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.05);cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-3px);background:rgba(255,255,255,.1)}.primary{background:var(--text);color:#080c14;font-weight:700}
-section{padding:65px 0 20px}.section-title{font-size:2rem;margin:0 0 25px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{padding:24px;border:1px solid var(--border);border-radius:20px;background:var(--card);backdrop-filter:blur(12px);transition:.2s}.card:hover{transform:translateY(-5px);border-color:rgba(110,168,254,.4)}.icon{font-size:1.8rem}.card h3{margin:14px 0 8px}.card p{color:var(--muted);line-height:1.6;margin:0 0 17px}.info-btn{display:inline-block;padding:9px 13px;border-radius:10px;border:1px solid var(--border);font-size:.88rem;color:var(--text);background:rgba(255,255,255,.04);cursor:pointer}.info-btn:hover{background:rgba(110,168,254,.14)}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.tag{font-size:.78rem;padding:5px 9px;border-radius:999px;background:rgba(110,168,254,.09);color:#bdd4ff;border:1px solid rgba(110,168,254,.15)}
-.terminal{margin-top:35px;border:1px solid var(--border);border-radius:18px;background:#050810;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.25)}.terminal-bar{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--muted);font-size:.85rem}pre{margin:0;padding:22px;overflow:auto;color:#cdd9ee;line-height:1.6}.prompt{color:#7ee787}
-.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.7);backdrop-filter:blur(7px)}.modal.open{display:flex}.modal-box{position:relative;max-width:680px;width:100%;max-height:85vh;overflow:auto;padding:30px;border:1px solid var(--border);border-radius:24px;background:#0d1422;box-shadow:0 30px 100px rgba(0,0,0,.55)}.modal-box h2{margin-top:0}.modal-box p,.modal-box li{color:var(--muted);line-height:1.7}.close{position:absolute;right:18px;top:15px;border:0;background:transparent;color:var(--muted);font-size:1.7rem;cursor:pointer}.close:hover{color:var(--text)}
-footer{text-align:center;color:var(--muted);padding:60px 7% 30px;font-size:.9rem}
-@media(max-width:760px){.links{display:none}.grid{grid-template-columns:1fr}main{padding-top:40px}h1{letter-spacing:-3px}.hero{min-height:70vh}}
+:root {
+  --bg: #070b14;
+  --card: rgba(16, 24, 40, .78);
+  --text: #eef4ff;
+  --muted: #9aa9c2;
+  --a: #6ea8fe;
+  --a2: #9b7cff;
+  --border: rgba(255, 255, 255, .1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 12% 8%, rgba(110, 168, 254, .18), transparent 30%),
+              radial-gradient(circle at 88% 15%, rgba(155, 124, 255, .17), transparent 28%),
+              var(--bg);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 7%;
+  background: rgba(7, 11, 20, .75);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(110, 168, 254, 0.4);
+}
+
+.logo span {
+  color: var(--a);
+}
+
+.links {
+  display: flex;
+  gap: 22px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.links a:hover {
+  color: var(--text);
+}
+
+main {
+  max-width: 1120px;
+  margin: auto;
+  padding: 70px 7% 40px;
+}
+
+.hero {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+/* Avatar de Jufu con animación de flotado y resplandor */
+.profile-avatar-wrapper {
+  margin: 0 auto 24px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-avatar {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  border-radius: 50%;
+  padding: 8px;
+  background: rgba(16, 24, 40, 0.85);
+  border: 2px solid rgba(155, 124, 255, 0.4);
+  box-shadow: 
+    0 0 25px rgba(110, 168, 254, 0.25),
+    0 0 45px rgba(155, 124, 255, 0.15);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  animation: floatAvatar 4s ease-in-out infinite;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.08) rotate(3deg);
+  border-color: var(--a);
+  box-shadow: 
+    0 0 35px rgba(110, 168, 254, 0.45),
+    0 0 65px rgba(155, 124, 255, 0.3);
+}
+
+@keyframes floatAvatar {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, .04);
+  font-size: .9rem;
+}
+
+h1 {
+  font-size: clamp(3.2rem, 9vw, 6.5rem);
+  line-height: .94;
+  margin: 22px 0;
+  letter-spacing: -5px;
+}
+
+.gradient {
+  background: linear-gradient(100deg, var(--a), var(--a2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  max-width: 680px;
+  margin: auto;
+  color: var(--muted);
+  font-size: 1.12rem;
+  line-height: 1.7;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, .05);
+  cursor: pointer;
+  transition: transform .2s, background .2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, .1);
+}
+
+.primary {
+  background: var(--text);
+  color: #080c14;
+  font-weight: 700;
+}
+
+section {
+  padding: 65px 0 20px;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin: 0 0 25px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  transition: transform .2s, border-color .2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(110, 168, 254, .4);
+}
+
+.icon {
+  font-size: 1.8rem;
+}
+
+.card h3 {
+  margin: 14px 0 8px;
+}
+
+.card p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 17px;
+}
+
+.info-btn {
+  display: inline-block;
+  padding: 9px 13px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: .88rem;
+  color: var(--text);
+  background: rgba(255, 255, 255, .04);
+  cursor: pointer;
+}
+
+.info-btn:hover {
+  background: rgba(110, 168, 254, .14);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag {
+  font-size: .78rem;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(110, 168, 254, .09);
+  color: #bdd4ff;
+  border: 1px solid rgba(110, 168, 254, .15);
+}
+
+.terminal {
+  margin-top: 35px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #050810;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
+}
+
+.terminal-bar {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+pre {
+  margin: 0;
+  padding: 22px;
+  overflow: auto;
+  color: #cdd9ee;
+  line-height: 1.6;
+}
+
+.prompt {
+  color: #7ee787;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, .7);
+  backdrop-filter: blur(7px);
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-box {
+  position: relative;
+  max-width: 680px;
+  width: 100%;
+  max-height: 85vh;
+  overflow: auto;
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: #0d1422;
+  box-shadow: 0 30px 100px rgba(0, 0, 0, .55);
+}
+
+.modal-box h2 {
+  margin-top: 0;
+}
+
+.modal-box p, .modal-box li {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.close {
+  position: absolute;
+  right: 18px;
+  top: 15px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--text);
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 60px 7% 30px;
+  font-size: .9rem;
+}
+
+@media (max-width: 760px) {
+  .links {
+    display: none;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  main {
+    padding-top: 40px;
+  }
+  h1 {
+    letter-spacing: -3px;
+  }
+  .hero {
+    min-height: 70vh;
+  }
+}
 </style>
 </head>
 <body>
-<nav><div class="logo">Tva231<span>-oss</span></div><div class="links"><a href="#sobre">Sobre mí</a><a href="#juegos">Juegos</a><a href="#tech">Tech</a><a href="https://github.com/Tva231-oss" target="_blank" rel="noopener">GitHub ↗</a></div></nav>
-<main>
-<section class="hero"><div><span class="badge">⚡ GitHub Pages · gaming · tecnología</span><h1>Hola, soy<br><span class="gradient">Tva231-oss.</span></h1><p>Mi pequeño rincón de internet para hablar de juegos, mods, emulación, hardware, sistemas operativos y todas esas cosas que termino probando por curiosidad.</p><div class="buttons"><a class="btn primary" href="#juegos">Ver mis juegos ↓</a><a class="btn" href="#tech">Mi lado técnico</a><a class="btn" href="https://github.com/Tva231-oss" target="_blank" rel="noopener">GitHub ↗</a></div></div></section>
 
-<section id="sobre"><h2 class="section-title">Sobre mí</h2><div class="card"><p>Me gusta trastear con videojuegos y tecnología: desde exprimir hardware modesto hasta probar ports, mods, emuladores y diferentes sistemas operativos. Esta página también es un experimento: <b>HTML + CSS + JavaScript puro.</b></p><div class="tags"><span class="tag">Gaming</span><span class="tag">Modding</span><span class="tag">Emulación</span><span class="tag">PC</span><span class="tag">Android</span><span class="tag">Linux</span></div></div><div class="terminal"><div class="terminal-bar">tva231-oss@github-pages: ~</div><pre><span class="prompt">$</span> whoami
+<nav>
+  <div class="logo">
+    <img src="Jufu1.gif" alt="Logo Jufu" class="logo-img">
+    <div>Tva231<span>-oss</span></div>
+  </div>
+  <div class="links">
+    <a href="#sobre">Sobre mí</a>
+    <a href="#juegos">Juegos</a>
+    <a href="#tech">Tech</a>
+    <a href="https://github.com/Tva231-oss" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div>
+      <div class="profile-avatar-wrapper">
+        <img src="Jufu1.gif" alt="Avatar de Tva231-oss - Jufu" class="profile-avatar">
+      </div>
+      <span class="badge">⚡ GitHub Pages · gaming · tecnología</span>
+      <h1>Hola, soy<br><span class="gradient">Tva231-oss.</span></h1>
+      <p>Mi pequeño rincón de internet para hablar de juegos, mods, emulación, hardware, sistemas operativos y todas esas cosas que termino probando por curiosidad.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#juegos">Ver mis juegos ↓</a>
+        <a class="btn" href="#tech">Mi lado técnico</a>
+        <a class="btn" href="https://github.com/Tva231-oss" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <h2 class="section-title">Sobre mí</h2>
+    <div class="card">
+      <p>Me gusta trastear con videojuegos y tecnología: desde exprimir hardware modesto hasta probar ports, mods, emuladores y diferentes sistemas operativos. Esta página también es un experimento: <b>HTML + CSS + JavaScript puro.</b></p>
+      <div class="tags">
+        <span class="tag">Gaming</span>
+        <span class="tag">Modding</span>
+        <span class="tag">Emulación</span>
+        <span class="tag">PC</span>
+        <span class="tag">Android</span>
+        <span class="tag">Linux</span>
+      </div>
+    </div>
+    <div class="terminal">
+      <div class="terminal-bar">tva231-oss@github-pages: ~</div>
+      <pre><span class="prompt">$</span> whoami
 Tva231-oss
 
 <span class="prompt">$</span> cat intereses.txt
-gaming / modding / hardware / emulación / Linux / Android</pre></div></section>
+gaming / modding / hardware / emulación / Linux / Android</pre>
+    </div>
+  </section>
 
-<section id="juegos"><h2 class="section-title">🎮 Juegos que forman parte del caos</h2><div class="grid">
-<article class="card"><div class="icon">🔫</div><h3>Counter-Strike 1.6</h3><p>Uno de los clásicos que más he tocado, practicando puntería, cobertura y aprovechando incluso las rarezas del GoldSrc.</p><button class="info-btn" onclick="openInfo('cs')">Más información</button></article>
-<article class="card"><div class="icon">🧪</div><h3>Half-Life 1 & 2</h3><p>GoldSrc, Source, Xash3D y experimentos con ports y traducciones forman parte del laboratorio.</p><button class="info-btn" onclick="openInfo('hl')">Más información</button></article>
-<article class="card"><div class="icon">🚗</div><h3>GTA</h3><p>San Andreas, GTA IV y los ports de GTA en Android/PSP. También me interesa cómo cambian las versiones según la plataforma.</p><button class="info-btn" onclick="openInfo('gta')">Más información</button></article>
-<article class="card"><div class="icon">⛏️</div><h3>Minecraft</h3><p>Java, Bedrock, mods, shaders, Vulkan y ports imposibles. Optimizarlo en hardware humilde es parte de la diversión.</p><button class="info-btn" onclick="openInfo('minecraft')">Más información</button></article>
-<article class="card"><div class="icon">🏎️</div><h3>Forza Horizon</h3><p>Forza Horizon 4 y la curiosidad por ver hasta dónde se puede llevar el rendimiento con configuraciones muy ajustadas.</p><button class="info-btn" onclick="openInfo('forza')">Más información</button></article>
-<article class="card"><div class="icon">🚙</div><h3>BeamNG.drive</h3><p>Física de vehículos, simulación y el típico intento de hacer funcionar cosas pesadas en hardware que no debería.</p><button class="info-btn" onclick="openInfo('beamng')">Más información</button></article>
-<article class="card"><div class="icon">🚀</div><h3>Spaceflight Simulator</h3><p>Cohetes, física y actualizaciones: otro de esos juegos donde terminar experimentando es inevitable.</p><button class="info-btn" onclick="openInfo('sfs')">Más información</button></article>
-<article class="card"><div class="icon">🟨</div><h3>Undertale Yellow</h3><p>También sigo de cerca los ports y proyectos comunitarios, especialmente cuando aparecen versiones para Android.</p><button class="info-btn" onclick="openInfo('uty')">Más información</button></article>
-<article class="card"><div class="icon">🧬</div><h3>Spore</h3><p>Y sí: ahora también entra Spore al laboratorio. Mods, instalación y experimentación con el juego.</p><button class="info-btn" onclick="openInfo('spore')">Más información</button></article>
-</div></section>
+  <section id="juegos">
+    <h2 class="section-title">🎮 Juegos que forman parte del caos</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="icon">🔫</div>
+        <h3>Counter-Strike 1.6</h3>
+        <p>Uno de los clásicos que más he tocado, practicando puntería, cobertura y aprovechando incluso las rarezas del GoldSrc.</p>
+        <button class="info-btn" onclick="openInfo('cs')">Más información</button>
+      </article>
 
-<section id="tech"><h2 class="section-title">💻 Mi lado técnico</h2><div class="grid">
-<article class="card"><div class="icon">🖥️</div><h3>Hardware humilde</h3><p>Me interesa sacar rendimiento de equipos modestos, optimizar Windows/Linux y reducir cuellos de botella.</p><button class="info-btn" onclick="openInfo('hardware')">Detalles</button></article>
-<article class="card"><div class="icon">📱</div><h3>Android</h3><p>APKs, ADB, emulación, ports, Android Go y experimentar con las posibilidades del teléfono.</p><button class="info-btn" onclick="openInfo('android')">Detalles</button></article>
-<article class="card"><div class="icon">🐧</div><h3>Linux & Windows</h3><p>Probando sistemas, Proton, Steam, drivers y configuraciones para gaming.</p><button class="info-btn" onclick="openInfo('os')">Detalles</button></article>
-<article class="card"><div class="icon">🧩</div><h3>Mods & emulación</h3><p>PSP, PS2, PS3, Winlator, GameHub, OptiProjects y ports comunitarios: si se puede modificar, probablemente me interese.</p><button class="info-btn" onclick="openInfo('mods')">Detalles</button></article>
-</div></section>
+      <article class="card">
+        <div class="icon">🧪</div>
+        <h3>Half-Life 1 & 2</h3>
+        <p>GoldSrc, Source, Xash3D y experimentos con ports y traducciones forman parte del laboratorio.</p>
+        <button class="info-btn" onclick="openInfo('hl')">Más información</button>
+      </article>
+
+      <article class="card">
+        <div class="icon">🚗</div>
+        <h3>GTA</h3>
+        <p>San Andreas, GTA IV y los ports de GTA en Android/PSP. También me interesa cómo cambian las versiones según la plataforma.</p>
+        <button class="info-btn" onclick="openInfo('gta')">Más información</button>
+      </article>
+
+      <article class="card">
+        <div class="icon">⛏️</div>
+        <h3>Minecraft</h3>
+        <p>Java, Bedrock, mods, shaders, Vulkan y ports imposibles. Optimizarlo en hardware humilde es parte de la diversión.</p>
+        <button class="info-btn" onclick="openInfo('minecraft')">Más información</button>
+      </article>
+
+      <article class="card">
+        <div class="icon">🏎️</div>
+        <h3>Forza Horizon</h3>
+        <p>Forza Horizon 4 y la curiosidad por ver hasta dónde se puede llevar el rendimiento con configuraciones muy ajustadas.</p>
+        <button class="info-btn" onclick="openInfo('forza')">Más información</button>
+      </article>
+
+      <article class="card">
+        <div class="icon">🚙</div>
+        <h3>BeamNG.drive</h3>
+        <p>Física de vehículos, simulación y el típico intento de hacer funcionar cosas pesadas en hardware que no debería.</p>
+        <button class="info-btn" onclick="openInfo('beamng')">Más información</button>
+      </article>
+
+      <article class="card">
+        <div class="icon">🚀</div>
+        <h3>Spaceflight Simulator</h3>
+        <p>Cohetes, física y actualizaciones: otro de esos juegos donde terminar experimentando es inevitable.</p>
+        <button class="info-btn" onclick="openInfo('sfs')">Más información</button>
+      </article>
+
+      <article class="card">
+        <div class="icon">🟨</div>
+        <h3>Undertale Yellow</h3>
+        <p>También sigo de cerca los ports y proyectos comunitarios, especialmente cuando aparecen versiones para Android.</p>
+        <button class="info-btn" onclick="openInfo('uty')">Más información</button>
+      </article>
+
+      <article class="card">
+        <div class="icon">🧬</div>
+        <h3>Spore</h3>
+        <p>Y sí: ahora también entra Spore al laboratorio. Mods, instalación y experimentación con el juego.</p>
+        <button class="info-btn" onclick="openInfo('spore')">Más información</button>
+      </article>
+    </div>
+  </section>
+
+  <section id="tech">
+    <h2 class="section-title">💻 Mi lado técnico</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="icon">🖥️</div>
+        <h3>Hardware humilde</h3>
+        <p>Me interesa sacar rendimiento de equipos modestos, optimizar Windows/Linux y reducir cuellos de botella.</p>
+        <button class="info-btn" onclick="openInfo('hardware')">Detalles</button>
+      </article>
+
+      <article class="card">
+        <div class="icon">📱</div>
+        <h3>Android</h3>
+        <p>APKs, ADB, emulación, ports, Android Go y experimentar con las posibilidades del teléfono.</p>
+        <button class="info-btn" onclick="openInfo('android')">Detalles</button>
+      </article>
+
+      <article class="card">
+        <div class="icon">🐧</div>
+        <h3>Linux & Windows</h3>
+        <p>Probando sistemas, Proton, Steam, drivers y configuraciones para gaming.</p>
+        <button class="info-btn" onclick="openInfo('os')">Detalles</button>
+      </article>
+
+      <article class="card">
+        <div class="icon">🧩</div>
+        <h3>Mods & emulación</h3>
+        <p>PSP, PS2, PS3, Winlator, GameHub, OptiProjects y ports comunitarios: si se puede modificar, probablemente me interese.</p>
+        <button class="info-btn" onclick="openInfo('mods')">Detalles</button>
+      </article>
+    </div>
+  </section>
 </main>
-<footer>Hecho con HTML, CSS y JavaScript · © 2026 Tva231-oss · <a href="https://github.com/Tva231-oss">GitHub</a></footer>
 
-<div class="modal" id="modal" onclick="if(event.target===this)closeInfo()"><div class="modal-box"><button class="close" onclick="closeInfo()">×</button><div id="modalContent"></div></div></div>
+<footer>
+  Hecho con HTML, CSS y JavaScript · © 2026 Tva231-oss · 
+  <a href="https://github.com/Tva231-oss" target="_blank" rel="noopener">GitHub</a>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" onclick="if(event.target===this)closeInfo()">
+  <div class="modal-box">
+    <button class="close" aria-label="Cerrar modal" onclick="closeInfo()">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
 <script>
-const info={
-cs:{title:'🔫 Counter-Strike 1.6',html:'<p>Uno de mis clásicos. He estado practicando puntería contra bots, usando cobertura y aprovechando la posibilidad de atravesar ciertos materiales del mapa.</p><p><b>Lo curioso:</b> GoldSrc tiene varias particularidades de detección y penetración que hacen que algunos disparos atraviesen objetos de maneras bastante interesantes.</p>'},
-hl:{title:'🧪 Half-Life',html:'<p>Half-Life 1 y 2 son parte de mi lado más técnico: GoldSrc, Source, Xash3D y ports para Android.</p><p>También he trasteado con versiones traducidas y modificaciones del motor.</p>'},
-gta:{title:'🚗 GTA',html:'<p>San Andreas, GTA IV y varios ports de la saga. Me interesa especialmente comparar cómo cambia el rendimiento y el apartado gráfico entre PC, PS2, PSP y Android.</p><ul><li>GTA IV: optimización extrema y el famoso cuello de botella del RAGE.</li><li>GTA San Andreas: mods y versiones para distintas plataformas.</li><li>GTA en Android/PSP: ports, diferencias y rendimiento.</li></ul>'},
-minecraft:{title:'⛏️ Minecraft',html:'<p>Minecraft es prácticamente un laboratorio de optimización: Java, Bedrock, Vulkan, shaders, RenderDragon, mods y ports.</p><p>Me interesa especialmente cómo una API gráfica distinta puede reducir cuellos de botella y cómo proyectos comunitarios consiguen rendimiento inesperado en hardware limitado.</p>'},
-forza:{title:'🏎️ Forza Horizon',html:'<p>Forza Horizon 4 es uno de los juegos pesados que he intentado llevar al límite en hardware modesto, ajustando resolución y gráficos para conseguir la mayor estabilidad posible.</p><p>También sigo Forza Horizon 6 y la evolución de la saga.</p>'},
-beamng:{title:'🚙 BeamNG.drive',html:'<p>Simulación y destrucción con física avanzada. Es de esos juegos donde CPU y GPU pueden sufrir bastante, así que optimizarlo resulta especialmente interesante.</p>'},
-sfs:{title:'🚀 Spaceflight Simulator',html:'<p>Otro juego que sigo por sus actualizaciones y por cómo evoluciona técnicamente. La combinación de física, cohetes y construcción hace que siempre haya algo que experimentar.</p>'},
-uty:{title:'🟨 Undertale Yellow',html:'<p>También me llamó la atención el port comunitario de Undertale Yellow para Android. Me gustan especialmente estos proyectos que consiguen llevar juegos a plataformas para las que originalmente no fueron pensados.</p>'},
-spore:{title:'🧬 Spore',html:'<p>Spore entra oficialmente al laboratorio. La parte que más me interesa ahora es el modding y cómo instalar y gestionar mods sin convertir la instalación en un desastre.</p>'},
-hardware:{title:'🖥️ Hardware humilde',html:'<p>Me gusta exprimir equipos modestos: ajustar resolución, gráficos, procesos en segundo plano, sistemas operativos y APIs gráficas para conseguir más rendimiento del esperado.</p>'},
-android:{title:'📱 Android',html:'<p>APK/APKM/XAPK, ADB, ADBAppControl, emulación, ports y optimización. Android es básicamente otra plataforma para experimentar.</p>'},
-os:{title:'🐧 Linux & Windows',html:'<p>He probado Windows 10 LTSC y Linux para gaming, además de Steam y Proton. También me interesa comparar rendimiento, consumo de RAM y velocidades reales entre sistemas.</p>'},
-mods:{title:'🧩 Mods & emulación',html:'<p>PSP, PS2, PS3, Winlator, GameHub y proyectos como OptiProjects. Me fascina cuando una comunidad consigue hacer funcionar un juego en una plataforma donde nadie esperaba verlo.</p>'}
+const info = {
+  cs: {
+    title: '🔫 Counter-Strike 1.6',
+    html: '<p>Uno de mis clásicos. He estado practicando puntería contra bots, usando cobertura y aprovechando la posibilidad de atravesar ciertos materiales del mapa.</p><p><b>Lo curioso:</b> GoldSrc tiene varias particularidades de detección y penetración que hacen que algunos disparos atraviesen objetos de maneras bastante interesantes.</p>'
+  },
+  hl: {
+    title: '🧪 Half-Life',
+    html: '<p>Half-Life 1 y 2 son parte de mi lado más técnico: GoldSrc, Source, Xash3D y ports para Android.</p><p>También he trasteado con versiones traducidas y modificaciones del motor.</p>'
+  },
+  gta: {
+    title: '🚗 GTA',
+    html: '<p>San Andreas, GTA IV y varios ports de la saga. Me interesa especialmente comparar cómo cambia el rendimiento y el apartado gráfico entre PC, PS2, PSP y Android.</p><ul><li>GTA IV: optimización extrema y el famoso cuello de botella del RAGE.</li><li>GTA San Andreas: mods y versiones para distintas plataformas.</li><li>GTA en Android/PSP: ports, diferencias y rendimiento.</li></ul>'
+  },
+  minecraft: {
+    title: '⛏️ Minecraft',
+    html: '<p>Minecraft es prácticamente un laboratorio de optimización: Java, Bedrock, Vulkan, shaders, RenderDragon, mods y ports.</p><p>Me interesa especialmente cómo una API gráfica distinta puede reducir cuellos de botella y cómo proyectos comunitarios consiguen rendimiento inesperado en hardware limitado.</p>'
+  },
+  forza: {
+    title: '🏎️ Forza Horizon',
+    html: '<p>Forza Horizon 4 es uno de los juegos pesados que he intentado llevar al límite en hardware modesto, ajustando resolución y gráficos para conseguir la mayor estabilidad posible.</p><p>También sigo Forza Horizon 6 y la evolución de la saga.</p>'
+  },
+  beamng: {
+    title: '🚙 BeamNG.drive',
+    html: '<p>Simulación y destrucción con física avanzada. Es de esos juegos donde CPU y GPU pueden sufrir bastante, así que optimizarlo resulta especialmente interesante.</p>'
+  },
+  sfs: {
+    title: '🚀 Spaceflight Simulator',
+    html: '<p>Otro juego que sigo por sus actualizaciones y por cómo evoluciona técnicamente. La combinación de física, cohetes y construcción hace que siempre haya algo que experimentar.</p>'
+  },
+  uty: {
+    title: '🟨 Undertale Yellow',
+    html: '<p>También me llamó la atención el port comunitario de Undertale Yellow para Android. Me gustan especialmente estos proyectos que consiguen llevar juegos a plataformas para las que originalmente no fueron pensados.</p>'
+  },
+  spore: {
+    title: '🧬 Spore',
+    html: '<p>Spore entra oficialmente al laboratorio. La parte que más me interesa ahora es el modding y cómo instalar y gestionar mods sin convertir la instalación en un desastre.</p>'
+  },
+  hardware: {
+    title: '🖥️ Hardware humilde',
+    html: '<p>Me gusta exprimir equipos modestos: ajustar resolución, gráficos, procesos en segundo plano, sistemas operativos y APIs gráficas para conseguir más rendimiento del esperado.</p>'
+  },
+  android: {
+    title: '📱 Android',
+    html: '<p>APK/APKM/XAPK, ADB, ADBAppControl, emulación, ports y optimización. Android es básicamente otra plataforma para experimentar.</p>'
+  },
+  os: {
+    title: '🐧 Linux & Windows',
+    html: '<p>He probado Windows 10 LTSC y Linux para gaming, además de Steam y Proton. También me interesa comparar rendimiento, consumo de RAM y velocidades reales entre sistemas.</p>'
+  },
+  mods: {
+    title: '🧩 Mods & emulación',
+    html: '<p>PSP, PS2, PS3, Winlator, GameHub y proyectos como OptiProjects. Me fascina cuando una comunidad consigue hacer funcionar un juego en una plataforma donde nadie esperaba verlo.</p>'
+  }
 };
-function openInfo(id){const x=info[id];document.getElementById('modalContent').innerHTML='<h2>'+x.title+'</h2>'+x.html;document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden'}
-function closeInfo(){document.getElementById('modal').classList.remove('open');document.body.style.overflow=''}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeInfo()});
+
+function openInfo(id) {
+  const x = info[id];
+  if (!x) return;
+  document.getElementById('modalContent').innerHTML = '<h2>' + x.title + '</h2>' + x.html;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeInfo() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeInfo();
+});
 </script>
-</body></html>
+</body>
+</html>
